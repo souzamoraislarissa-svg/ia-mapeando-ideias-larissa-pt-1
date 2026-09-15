@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Rotinas de Estudos da Larissa Sthefany</title>
+    <!-- Fonte Google Inter para visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Formas 3D suaves ao fundo -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container">
+        <header>
+            <h1>organizador de rotinas de estudos da Larissa Sthefany</h1>
+            <p>Mapeamento de desafios, insatisfações e soluções para uma rotina leve e produtiva.</p>
+        </header>
+
+        <!-- Grid de Cards de Diagnóstico do Estudante -->
+        <main class="cards-grid">
+            
+            <!-- Card 1 -->
+            <div class="card" onclick="openModal('modal1')">
+                <span class="card-tag">Problema Real</span>
+                <h3>Procrastinação & Foco</h3>
+                <p>Dificuldade para iniciar os estudos e distrações constantes com redes sociais ou tarefas secundárias.</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" onclick="openModal('modal2')">
+                <span class="card-tag">Incômodo Diário</span>
+                <h3>Sensação de Sobrecarga</h3>
+                <p>Acúmulo de matérias, prazos apertados e a impressão constante de que "o dia não tem horas suficientes".</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" onclick="openModal('modal3')">
+                <span class="card-tag">Insatisfação</span>
+                <h3>Estudo Ineficiente</h3>
+                <p>Gastar horas lendo conteúdos sem conseguir memorizar, revisar de forma adequada ou aplicar na prática.</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card" onclick="openModal('modal4')">
+                <span class="card-tag">Problema Real</span>
+                <h3>Falta de Planejamento</h3>
+                <p>Não saber por onde começar ao sentar na mesa e perder tempo organizando o que deveria ser feito no dia.</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card" onclick="openModal('modal5')">
+                <span class="card-tag">Incômodo Diário</span>
+                <h3>Cansaço & Desmotivação</h3>
+                <p>Esgotamento mental no fim do dia e falta de momentos de descanso sem culpa na rotina.</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card" onclick="openModal('modal6')">
+                <span class="card-tag">Insatisfação</span>
+                <h3>Desorganização do Espaço</h3>
+                <p>Materiais espalhados, links de arquivos perdidos e falta de um ambiente propício para concentração.</p>
+                <div class="card-footer">Ver soluções sugeridas &rarr;</div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- EFEITO MODAL (JANELA FLUTUANTE) -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOuterClick(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">✕</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Título da Categoria</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo injetado via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados das soluções apresentadas na Modal
+        const modalData = {
+            modal1: {
+                title: "Procrastinação & Foco",
+                details: "A procrastinação ocorre principalmente quando a tarefa parece grande demais ou cansativa.",
+                solutions: [
+                    "Método Pomodoro: Estude 25 min e descanse 5 min.",
+                    "Bloqueadores de apps durante os blocos de estudo.",
+                    "Regra dos 2 minutos: Comece estudando só por 2 minutos para quebrar a resistência inicial."
+                ]
+            },
+            modal2: {
+                title: "Sensação de Sobrecarga",
+                details: "A sobrecarga vem de tentar abraçar tudo de uma vez sem priorização clara.",
+                solutions: [
+                    "Matriz de Eisenhower: Separe o que é urgente do que é importante.",
+                    "Defina no máximo 3 metas principais para o dia.",
+                    "Planeje a semana no domingo para evitar surpresas."
+                ]
+            },
+            modal3: {
+                title: "Estudo Ineficiente",
+                details: "Estudar passivamente (apenas lendo ou grifando) dá uma falsa sensação de aprendizado.",
+                solutions: [
+                    "Estudo Ativo: Faça resumos com suas próprias palavras e resolva questões.",
+                    "Repetição Espaçada: Revise o conteúdo em intervalos (1 dia, 7 dias, 30 dias).",
+                    "Técnica Feynman: Tente explicar o conteúdo para si mesma como se estivesse ensinando alguém."
+                ]
+            },
+            modal4: {
+                title: "Falta de Planejamento",
+                details: "Decidir o que estudar no momento de sentar na mesa consome energia mental valiosa.",
+                solutions: [
+                    "Deixe o material de estudo do dia seguinte pronto na noite anterior.",
+                    "Crie um cronograma semanal visual com blocos de horários.",
+                    "Separe as matérias por dias fixos da semana."
+                ]
+            },
+            modal5: {
+                title: "Cansaço & Desmotivação",
+                details: "Estudar com a mente cansada reduz a retenção e aumenta o estresse.",
+                solutions: [
+                    "Inclua pausas obrigatórias na sua agenda (o descanso faz parte do estudo).",
+                    "Pratique higiene do sono para ter noites reparadoras.",
+                    "Recompense-se ao concluir uma meta diária importante."
+                ]
+            },
+            modal6: {
+                title: "Desorganização do Espaço & Materiais",
+                details: "A bagunça ao redor aumenta a ansiedade e gera distrações visuais.",
+                solutions: [
+                    "Mantenha na mesa apenas o material da matéria que está estudando agora.",
+                    "Centralize anotações digitais em um só aplicativo (ex: Notion).",
+                    "Organize arquivos do computador em pastas por disciplinas."
+                ]
+            }
+        };
+
+        const overlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(id) {
+            const data = modalData[id];
+            if (data) {
+                modalTitle.innerText = data.title;
+                
+                let htmlContent = `<p>${data.details}</p><br><strong>Ações para Resolver:</strong><ul>`;
+                data.solutions.forEach(item => {
+                    htmlContent += `<li>${item}</li>`;
+                });
+                htmlContent += `</ul>`;
+
+                modalBody.innerHTML = htmlContent;
+                overlay.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+        }
+
+        function closeModalOnOuterClick(event) {
+            if (event.target === overlay) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
