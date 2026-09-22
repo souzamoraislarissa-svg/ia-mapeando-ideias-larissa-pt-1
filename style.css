@@ -116,6 +116,9 @@ header p {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -134,6 +137,7 @@ header p {
     padding: 6px 12px;
     border-radius: 20px;
     display: inline-block;
+    align-self: flex-start;
     margin-bottom: 15px;
 }
 
@@ -147,6 +151,7 @@ header p {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
+    flex-grow: 1;
 }
 
 .card-footer {
@@ -159,82 +164,56 @@ header p {
     gap: 5px;
 }
 
-/* --- EFEITO MODAL --- */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(45, 52, 54, 0.4);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 100;
+/* --- ESTILOS COMPARTILHADOS PARA AS PÁGINAS SECUNDÁRIAS --- */
+.page-content {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
 }
 
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.modal-content {
-    background: #ffffff;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 24px;
-    padding: 35px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transform: translateY(20px) scale(0.95);
-    transition: transform 0.3s ease;
-    position: relative;
-}
-
-.modal-overlay.active .modal-content {
-    transform: translateY(0) scale(1);
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #f1f2f6;
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--text-muted);
-    transition: background 0.2s;
-}
-
-.close-btn:hover {
-    background: #dfe4ea;
-    color: var(--text-dark);
-}
-
-.modal-header h2 {
+.page-content h2 {
     font-size: 1.4rem;
-    margin-bottom: 15px;
+    color: var(--accent-blue);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.page-content p {
+    line-height: 1.7;
     color: var(--text-dark);
+    margin-bottom: 15px;
 }
 
-.modal-body {
-    font-size: 0.95rem;
+.page-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1.7;
     color: var(--text-muted);
-    line-height: 1.6;
 }
 
-.modal-body ul {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-.modal-body li {
+.page-content li {
     margin-bottom: 8px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    background: rgba(108, 92, 231, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(108, 92, 231, 0.2);
+    transform: translateX(-3px);
 }
