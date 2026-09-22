@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Ineficiente - Larissa Sthefany</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-content {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+        .page-content h2 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .page-content p {
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .page-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            background: rgba(108, 92, 231, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(108, 92, 231, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">&larr; Voltar ao Início</a>
+        
+        <header>
+            <h1>Estudo Ineficiente</h1>
+            <p>Substitua o aprendizado passivo por técnicas ativas baseadas em neurociência.</p>
+        </header>
+
+        <main class="page-content">
+            <h2>O Mito da Leitura Passiva</h2>
+            <p>Passar horas grifando livros ou assistindo aulas sem interagir com a matéria gera uma "ilusão de competência": você sente que aprendeu porque o conteúdo parece familiar, mas esquece quase tudo em poucos dias.</p>
+
+            <h2>Técnicas Ativas de Alto Rendimento</h2>
+            <ul>
+                <li><strong>Técnica Feynman:</strong> Explique o conceito em voz alta para si mesma ou para outra pessoa usando termos simples. Se gaguejar ou precisar olhar o livro, você encontrou a lacuna no seu aprendizado.</li>
+                <li><strong>Repetição Espaçada (Spaced Repetition):</strong> Distribua as revisões da mesma matéria ao longo do tempo (exemplo: 24 horas, 7 dias, 30 dias). Utilize ferramentas como o Anki para criar *flashcards* automatizados.</li>
+                <li><strong>Prática Deliberada com Questões:</strong> Resolva exercícios sem consultar o gabarito logo de início. O esforço cognitivo de tentar lembrar a resposta fortalece as conexões neurais.</li>
+                <li><strong>Resumos de Autoexplicação:</strong> Em vez de copiar trechos do texto, feche o livro e escreva com suas próprias palavras o que compreendeu do tópico.</li>
+            </ul>
+
+            <h2>Como Medir o Progresso Real</h2>
+            <p>Acompanhe seu desempenho por porcentagem de acertos em exercícios e facilidade de lembrança durante revisões, e não apenas pelo número de páginas lidas ou horas cronometradas.</p>
+        </main>
+    </div>
+</body>
+</html>
